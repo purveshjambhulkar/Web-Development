@@ -1,0 +1,16 @@
+Font Properties:
+font-family: Specifies the font family or typeface to be used. You can define multiple fonts as fallbacks.
+
+font-size: Sets the size of the font. Common units include pixels (px), ems (em), percentages (%), etc.
+
+font-weight: Determines the thickness or boldness of the font. Values can be normal, bold, bolder, lighter, or numeric values like 100, 200, ..., 900.
+
+font-style: Sets the style of the font to italic or normal.
+
+text-decoration: Adds decorations such as underline, overline, line-through, etc., to the text.
+
+text-transform: Changes the case of the text, e.g., uppercase, lowercase, capitalize.
+
+line-height: Defines the height of each line of text. It can be a number, percentage, or unitless value.
+
+letter-spacing: Sets the spacing between characters.

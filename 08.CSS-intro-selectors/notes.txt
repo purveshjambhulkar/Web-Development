@@ -1,0 +1,60 @@
+What is CSS?
+Cascading Style Sheets (CSS) is a language used for describing the presentation of a document written in markup languages like HTML and XML.
+It defines how HTML elements are displayed, including layout, colors, fonts, and more.
+
+Basic Syntax:
+selector {
+  property: value;
+}
+Selector: Identifies the HTML element to which the styles will be applied.
+Property: Attribute of the HTML element being styled.
+Value: Specific value for the property.
+
+1. Inline Styles:
+Usage: Apply styles directly to individual HTML elements using the style attribute.
+Syntax:
+<p style="color: red; font-size: 16px;">This is a paragraph with inline styles.</p>
+
+
+2. Internal Styles:
+Usage: Write CSS within <style> tags in the <head> section of an HTML document.
+Syntax:
+<head>
+  <style>
+    p {
+      color: blue;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+
+3. External Stylesheets:
+Usage: Link an external CSS file to an HTML document using the <link> element.
+Syntax:
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+
+4. Selectors:
+Type/Element Selectors: Target elements by their tag name (e.g., p, h1, div).
+Class Selectors: Select elements by their class attribute (e.g., .highlight).
+ID Selectors: Select a single element by its ID attribute (e.g., #header).
+/*Lets see child selectors*/
+div > h5 > p{
+    background-color: rgb(201, 184, 216);
+}
+
+/*descendent selector*/
+/*this selector works with childs suppose div p 
+then css will be applicable for the element p in the div
+ no matter p is div 's first child or not*/
+div p {
+    color: brown;
+}
+
+/*universal selector*/
+*{
+    /*css code applicable to all elements*/
+}

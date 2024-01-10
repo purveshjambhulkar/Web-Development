@@ -1,0 +1,43 @@
+p {
+    color: red;
+}
+
+/*Lets see child selectors*/
+div>h5>p {
+    background-color: rgb(201, 184, 216);
+}
+
+/*descendent selector*/
+/*this selector works with childs suppose div p 
+then css will be applicable for the element p in the div
+ no matter p is div 's first child or not*/
+div p {
+    color: brown;
+}
+
+/*universal selector*/
+* {
+    /* border: 2px solid black; */
+    /*css code applicable to all elements*/
+}
+
+/* pseudo selectors */
+a:visited {
+    background-color: brown;
+}
+
+a:active {
+    background-color: rgb(170, 170, 224);
+}
+
+a:link {
+    background-color: #fff;
+}
+
+div p:hover {
+    background-color: black;
+}
+
+p:first-child {
+    /*jaha jaha p apne parent ka first child hai waha waha ye css apply hoga*/
+}
