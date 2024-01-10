@@ -1,0 +1,31 @@
+HTML entities are special characters represented by specific codes or names that aren't directly typable on a keyboard.
+
+Named Entities: Represented by their name preceded by an ampersand (&) and followed by a semicolon (;). For example:
+
+&nbsp;: Non-breaking space.
+&copy;: Copyright symbol.
+&lt;: Less than symbol (<).
+&gt;: Greater than symbol (>).
+
+
+Decimal Entities: Represented by a hash (#) followed by the decimal Unicode value of the character and ending with a semicolon. For example:
+
+&#169;: Copyright symbol (&copy;)
+
+
+Hexadecimal Entities: Represented by #x followed by the hexadecimal Unicode value and ending with a semicolon. For example:
+
+&#x00A9;: Copyright symbol (&copy;).
+
+
+Common Examples:
+Non-breaking space: &nbsp;
+Trademark symbol: &trade; or &#8482;
+Euro currency symbol: &euro; or &#8364;
+Em dash: &mdash; or &#8212;
+Registered trademark symbol: &reg; or &#174;
+--------------------------------------------------------------------------------------------
+
+The <pre> tag in HTML stands for "preformatted text." 
+It's used to display text exactly as it's written in the HTML code, 
+preserving spaces, line breaks, and formatting. 

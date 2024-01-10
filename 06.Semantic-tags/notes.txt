@@ -1,0 +1,9 @@
+<header>, <footer>, <main>, <nav>, <article>, <section>:
+
+
+<header>: Typically contains introductory content or navigational aids for its parent section or document.
+<footer>: Holds footer content, often containing copyright, contact information, or related links.
+<main>: Encloses the primary content of the document, excluding headers, footers, and navigation links.
+<nav>: Marks a section containing navigation links or menus.
+<article>: Represents an independent, self-contained piece of content, such as a blog post, article, or comment.
+<section>: Defines a thematic grouping within a document; it's a generic container when there isn't a more specific semantic element available.
