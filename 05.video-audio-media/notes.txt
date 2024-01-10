@@ -1,0 +1,47 @@
+<video> Element:
+Attributes:
+src: Specifies the URL of the video file.
+controls: Shows default video controls (play, pause, volume, etc.).
+width and height: Defines the dimensions of the video.
+autoplay: Starts playing the video automatically when the page loads.
+loop: Repeats the video playback when it reaches the end.
+poster: Specifies an image to be shown while the video is loading.
+preload: Specifies whether the video should be loaded when the page loads.
+preload="none": No preload (default).
+preload="metadata": Preload metadata only (like duration and dimensions).
+preload="auto": Preload the entire video.
+poster: Sets an image that is displayed while the video is downloading or before it starts playing.
+controlslist: Specifies the control options for the video element.
+controlslist="nodownload": Prevents the video from being downloaded.
+controlslist="nofullscreen": Disables the fullscreen button.
+playsinline: For iOS, allows video playback inline rather than in fullscreen.
+
+
+<audio> Element:
+Attributes:
+src: Specifies the URL of the audio file.
+controls: Shows default audio controls (play, pause, volume, etc.).
+autoplay: Starts playing the audio automatically when the page loads.
+loop: Repeats the audio playback.
+preload: Similar to <video>, it specifies how audio should be preloaded.
+loop: Repeats audio playback when it reaches the end.
+controlslist: Similar to <video>, it sets the control options for the audio element.
+autoplay: Starts playing the audio automatically when the page loads.
+muted: Mutes the audio output by default.
+
+CommonAttributes
+crossorigin: Indicates whether the element's content is expected to be used in a cross-origin context.
+mediagroup: Groups media elements together, enabling synchronized playback controls.
+disablepictureinpicture: Prevents picture-in-picture (PiP) mode for video playback.
+onplay, onpause, onended: JavaScript event handlers for play, pause, and end of media playback events.
+
+---------------------------------------------------------------------------------------------------------------
+
+What is <iframe>?
+It allows you to display content from another URL or resource within your webpage.
+SYNTAX - <iframe src="URL_or_path_to_document"></iframe>
+Attributes:
+src: Specifies the URL or path to the document or resource to be embedded within the <iframe>.
+width and height: Define the dimensions (in pixels or percentages) of the <iframe> element.
+title: Describes the content or purpose of the <iframe>, aiding accessibility.
+sandbox: Enables a sandboxed iframe for added security, restricting actions like form submission or scripts.

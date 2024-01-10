@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is websites made to understant Forms">
+    <title>Forms</title>
+</head>
+
+<body>
+    <h1>Student Registration Form</h1>
+    <form>
+        <label for="username">Name :</label>
+        <input type="text" name="username" placeholder="Enter your name"><br>
+
+        <label for="rollno">Roll NO : </label>
+        <input type="number" name="rollno" placeholder="Enter your RollNo" min="1" max="69" required><br>
+
+        <label for="email">Email : </label>
+        <input type="email" name="email" placeholder="Enter your email"><br>
+
+        <label for="telNO">PH NO : </label>
+        <input type="tel" name="telNO" placeholder="Enter your Number" pattern="{0-9}[3]-{0-9}[3]-{0-9}[4]"><br>
+
+        <label for="gender">Gender :</label>
+        Male<input type="radio" name="gender">Female<input type="radio" name="gender"><br>
+
+        <label for="urself">Write about urself</label><br>
+        <textarea name="urself" rows="2" cols="30"></textarea><br>
+
+        <label for="branch">Select your Branch</label>
+        <select name="branch">
+            <option value="1">IT</option>
+            <option value="2">Cs</option>
+            <option value="3">MEch</option>
+            <option value="4">civil</option>
+        </select>
+        <br>
+
+        <label for="checkbox">select for fun</label>
+        <input type="checkbox" name="checkbox" value="yes"><br>
+
+        <input type="submit" value="Submit">
+
+
+    </form>
+</body>
+
+</html>
