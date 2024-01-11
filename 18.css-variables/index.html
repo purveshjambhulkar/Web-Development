@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS variables</title>
+    <style>
+        :root {
+            --myvar_forcolor: red;
+            /*declaration of variables*/
+            --sizevar: 12px;
+            --bordervar: 2px solid black;
+        }
+
+        .xyz {
+            border: var(--bordervar);
+            /*usage of variables*/
+            background-color: var(--myvar_forcolor);
+            font-size: var(--sizevar);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="xyz">this is div</div>
+
+
+</body>
+
+</html>
