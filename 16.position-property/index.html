@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Position Property</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        .box{
+            border: 2px solid black;
+            padding: 2vh;
+            margin: 2vh;
+            display: block;
+        }
+        .box1{
+            background-color: red;
+            position: relative;
+            z-index: 2;
+           
+        }
+        .box2{
+            background-color: yellowgreen;
+            position: relative;
+            bottom: 25px;
+            left: 15px;
+        }
+        .box3{
+            background-color: magenta;
+            position: relative;
+            bottom: 50px;
+            z-index: 2;
+        }
+        .box4{
+            background-color: burlywood;
+            position: relative;
+            bottom: 75px;
+            left: 15px;
+            
+        }
+        .box4:hover{
+         z-index: 4;   
+        }
+        .box2:hover{
+         z-index: 4;   
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="box box1">this is a box</div>
+    <div class="box box2">this is a box</div>
+    <div class="box box3">this is a box</div>
+    <div class="box box4">this is a box</div><br>
+    <hr>
+
+    
+</body>
+</html>
