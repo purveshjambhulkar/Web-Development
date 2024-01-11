@@ -1,0 +1,35 @@
+Pixels (px):
+Absolute unit representing a single pixel on the screen.
+Fixed-size regardless of user settings.
+
+Root EM (rem):
+Relative to the font-size of the root element (<html>).
+Useful for scalable and responsive layouts.
+
+Element EM (em):
+Relative to the font-size of the nearest parent element.
+Allows scalable layouts based on the parent's font size.
+
+Viewport Width (vw):
+Relative to 1% of the width of the viewport.
+Useful for responsive layouts based on viewport width.
+
+Viewport Height (vh):
+Relative to 1% of the height of the viewport.
+Useful for responsive layouts based on viewport height.
+
+Percentage (%):
+Relative to the size of the parent element.
+For example, width: 50% means half of the parent's width.
+
+Character Width (ch):
+Relative to the width of the "0" (zero) character in the element's font.
+Useful for layouts based on character width.
+
+Viewport Minimum (vmin):
+Relative to 1% of the minimum value between vw and vh.
+Useful for responsive layouts based on the smaller dimension.
+
+Viewport Maximum (vmax):
+Relative to 1% of the maximum value between vw and vh.
+Useful for responsive layouts based on the larger dimension.

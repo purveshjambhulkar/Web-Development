@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Property</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        div{
+            border: 2px solid black;
+            margin: 34px;
+            padding: 34px;
+            display: inline-block;
+            
+        }
+        .boxshadow{
+            /* box-shadow: h-offset v-offset blur spread color inset; */
+            box-shadow:15px 15px 5px 8px rebeccapurple  ;
+        }
+        .outline{
+            /* outline: width style color; */
+            outline:8px solid red ;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="boxshadow">
+        <p style="box-shadow: 2px 2px 4px black; ">This is a div</p>
+    </div>
+    <div class="outline">
+        This is a div
+    </div>
+</body>
+</html>
