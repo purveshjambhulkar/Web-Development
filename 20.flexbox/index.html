@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+    <style>
+        .item {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            height: 60px;
+            width: 60px;
+            background-color: aqua;
+
+            /* flex-grow: 1; */
+        }
+    
+        /* .item1{
+            align-self:flex-end;
+        } */
+        .container {
+            overflow: auto;
+            height: 500px;
+            width: 500px;
+            border: 2px solid black;
+            display: flex;
+            /* flex-direction: row; */
+            justify-content: center;
+            justify-content: space-evenly;
+            align-items: center;
+            align-content: center;
+            /* flex-wrap: nowrap; */
+            /* flex-flow: «flex-direction» «flex-wrap»; */
+            flex-flow: row wrap;
+            /* row-gap: 15px; */
+            /* column-gap: 15px;    */
+            gap:15px 15px;  /*gap : row col ;*/
+
+        }
+
+        .container:hover{
+            background-color: gray;
+        }
+        .item:hover{
+            background-color: black;            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item item1">Item 1</div>
+        <div class="item">Item 1</div>
+        <div class="item">Item 1</div>
+        <div class="item">Item 1</div>
+        <div class="item">Item 1</div>
+        <div class="item">Item 1</div>
+        <div class="item">Item 1</div>
+        <div class="item">Item 1</div>
+        <div class="item">Item 1</div>
+        <div class="item">Item 1</div>
+        <div class="item">Item 1</div>
+        <div class="item">Item 1</div>
+        <div class="item">Item 1</div>
+        <div class="item">Item 1</div>
+
+    </div>
+
+</body>
+
+</html>
