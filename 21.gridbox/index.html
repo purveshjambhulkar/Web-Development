@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRID</title>
+    <style>
+        .container {
+            display: grid;
+            border: 2px solid black;
+            grid-template-columns: 70px 70px 70px;
+
+            height: 150px;
+            width: 300px;
+
+        }
+
+        .item {
+            align-self: center;
+            justify-self: center;
+            
+            height: 50px;
+            width: 50px;
+            border: 1.5px solid red;
+            background-color: aquamarine;
+            text-align: center;
+        }
+
+        .item1:hover{
+            grid-row: 2;
+            grid-column: 3;
+            
+        }
+        .item6:hover{
+            grid-row: 1;
+            grid-column: 1;
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item item1">item1</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item item6">item6</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAVBAR</title>
+    <style>
+        html {
+            background-color: whitesmoke;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav {
+            display: flex;
+            background-color: rgb(179, 238, 238);
+            align-items: center;
+            height: 50px;
+            width: 100%;
+            border: 2px solid black;
+
+        }
+
+        .img {
+            margin-right: 86vw;
+            padding-left: 8px;
+            height: 40px;
+            width: 40px;
+        }
+
+        .items {
+
+            margin: 2px;
+            background-color: rgb(67, 200, 200);
+
+            justify-content: right;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+
+        .items:hover {
+            /* /* transform-origin: 50% 50%; */
+
+
+            transform: rotate(350deg);
+
+            /* transform: skewX(7deg); */
+            padding: 2px;
+            margin: 2px;
+        }
+
+        .items::selection {
+
+            background-color: aqua;
+            color: brown;
+        }
+
+        .section {
+
+            border: 5px solid black;
+            border-radius: 3px;
+            height: 171px;
+            width: 350px;
+            display: flex;
+            margin: 34px;
+            margin-right: 68px;
+            margin-left: 618px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            align-content: center;
+            box-shadow: 2px 3px 11px 7px coral
+        }
+
+        .first1 {
+            box-shadow: 2px 2px 2px 1px dimgrey;
+            border: 2px solid black;
+            font-weight: bold;
+            border-radius: 6px;
+            color: red;
+            background-color: antiquewhite;
+        }
+        .first1:hover{
+            transform: scale(2);
+        }
+
+        .firstdes {
+            border-radius: 9px;
+            color: black;
+            background-color: burlywood;
+            font-size: 21px;
+            align-self: center;
+            margin-bottom: 54px;
+        }
+
+        .grid {
+
+            margin-left: 301px;
+            margin-top: 53px;
+            display: grid;
+            height: 1000px;
+            width: 1000px;
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .gridimage {
+            align-self: center;
+            height: 237px;
+            box-shadow: 1px 2px 8px 4px #a3866e;
+            width: 248px;
+            margin: 11px;
+            border: 3px solid #060707;
+        }
+        
+        .gridcell {
+            border: 6px solid black;
+            margin: 6px;
+            border-radius: 20px;
+            display: flex;
+            flex-flow: column;
+            background-color: antiquewhite;
+            
+            
+        }
+        
+        .gridtext {
+            align-self: center;
+            margin: 10px;
+            font-size: 27px;
+            font-weight: bold;
+            text-decoration: dotted;
+            text-decoration-color: mediumvioletred;
+            text-decoration-line: underline;
+        }
+        
+        .griddescription {
+            font-size: 24px;
+            margin: 11px;
+        }
+        
+        @media screen and (max-width:145px) {
+            
+            .grid {
+    
+                margin-left: 301px;
+                margin-top: 53px;
+                display: grid;
+                height: 1000px;
+                width: 1000px;
+                grid-template-columns: 1fr ;
+            }
+        }
+        </style>
+</head>
+
+<body>
+    <div class="nav">
+        <img class="img" src="1yr3.jpeg" alt="1year image">
+        <div class="items">Home</div>
+        <div class="items">Contact</div>
+        <div class="items">More</div>
+    </div>
+    <section class="section">
+        <div class="firstdes"> Download Free Study Material Now !!!</div>
+        <div class="first1">Download</div>
+    </section>
+
+    <section class="grid">
+        <div class="gridcell">
+            <img class="gridimage" src="1yr3.jpeg" alt="image">
+            <span class="gridtext">this is image</span>
+            <span class="griddescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus dolorem dolor
+                unde!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor ea sequi illo
+                accusamus. Veniam!</span>
+        </div>
+        <div class="gridcell">
+            <img class="gridimage" src="1yr3.jpeg" alt="image">
+            <span class="gridtext">this is image</span>
+            <span class="griddescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus dolorem dolor
+                unde!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor ea sequi illo
+                accusamus. Veniam!</span>
+        </div>
+        <div class="gridcell">
+            <img class="gridimage" src="1yr3.jpeg" alt="image">
+            <span class="gridtext">this is image</span>
+            <span class="griddescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus dolorem dolor
+                unde!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor ea sequi illo
+                accusamus. Veniam!</span>
+        </div>
+        <div class="gridcell">
+            <img class="gridimage" src="1yr3.jpeg" alt="image">
+            <span class="gridtext">this is image</span>
+            <span class="griddescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus dolorem dolor
+                unde!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor ea sequi illo
+                accusamus. Veniam!</span>
+        </div>
+
+
+
+
+
+    </section>
+</body>
+
+</html>
