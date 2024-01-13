@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bounce</title>
+    <style>
+        .ani2 {
+            position: relative;
+            border: 2px solid black;
+            height: 300px;
+            width: 900px;
+
+
+        }
+
+        .ball1 {
+            position: absolute;
+            left: 0;
+            bottom: 0%;
+            border: 2px solid red;
+            height: 50px;
+            width: 50px;
+            border-radius: 56px;
+            background-color: aquamarine;
+            animation: bounce1X 5s linear infinite,
+                bounce1Y 1s ease-out infinite alternate;
+
+
+        }
+
+        .ball2 {
+            position: absolute;
+            right: 100%;
+            bottom: 0%;
+            border: 2px solid red;
+            height: 50px;
+            width: 50px;
+            border-radius: 56px;
+            background-color: aquamarine;
+            animation: bounce2X 5s linear infinite,
+                bounce2Y 1s ease-out infinite alternate;
+
+
+        }
+
+
+        @keyframes bounce1X {
+            from {
+                left: 0%;
+
+            }
+
+            to {
+                left: 95%;
+
+            }
+
+        }
+
+        @keyframes bounce1Y {
+            from {
+                bottom: 0%;
+            }
+
+            to {
+                bottom: 83%;
+            }
+        }
+
+        @keyframes bounce2X {
+            from {
+                left: 95%;
+
+            }
+
+            to {
+                left: 0%;
+
+            }
+
+        }
+
+        @keyframes bounce2Y {
+            from {
+                bottom: 83%;
+            }
+            
+            to {
+                bottom: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ani2">
+        <div class="ball1"></div>
+        <div class="ball2"></div>
+    </div>
+
+</body>
+
+</html>

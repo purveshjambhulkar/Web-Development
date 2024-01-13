@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .animation {
+            border: 2px solid black;
+            background-color: aqua;
+            margin: 23%;
+            text-align: center;
+
+
+
+
+        }
+
+        .animation:hover {
+            /* animation-name: MyAnimation;
+            animation-duration: 0.5s;
+            animation-iteration-count: 10;
+            animation-delay: 2s;
+            animation-direction: reverse;
+            animation-play-state: running; */
+            animation: MyAnimation 0.5s ease-in-out 2s 10 reverse;
+
+        }
+
+        @keyframes MyAnimation {
+            from {}
+
+            to {
+                transform: scale(3);
+            }
+        }
+
+       
+    </style>
+</head>
+
+<body>
+
+    <div class="animation">
+        THis is a div
+    </div>
+    <hr>
+    
+
+</body>
+
+</html>
