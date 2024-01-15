@@ -229,7 +229,7 @@ nav button {
 }
 
 .faq {
-    
+
     height: 111vh;
     color: #ffffff;
     font-family: Martel Sans;
@@ -270,7 +270,7 @@ nav button {
 } */
 
 
-.boxes{
+.boxes {
     display: flex;
     background-color: #333333;
     color: #ffffff;
@@ -285,7 +285,7 @@ nav button {
 
 }
 
-.boxes :nth-child(2){
+.boxes :nth-child(2) {
     font-size: 34px;
 }
 
@@ -293,4 +293,37 @@ nav button {
     margin-top: 34px;
     margin-bottom: 14px;
     font-size: 20px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    color: #b3b3b3;
+    margin: auto;
+    margin-top: 96px;
+    align-items: flex-start;
+    margin-left: 12vw;
+    font-family: Martel Sans;
+   
+}
+
+.footer> :nth-child(1) {
+    font-size: 20px;
+
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    height: 19vh;
+    width: 80vw;
+    text-decoration: underline;
+    margin-top: 13px;
+    margin-bottom: 10px;
+}
+
+.footer :last-child{
+    margin-top: 23px;
 }
