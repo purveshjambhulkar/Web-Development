@@ -324,6 +324,6 @@ nav button {
     margin-bottom: 10px;
 }
 
-.footer :last-child{
+.footer >:last-child{
     margin-top: 23px;
 }
