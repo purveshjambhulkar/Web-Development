@@ -1,0 +1,13 @@
+.container{
+    height: 45%;
+    width: 80%;
+    border: 2px solid black;
+    display: flex;
+    background-color: black;
+    color: #ffffff;
+}
+
+.container img {
+    margin: 15px 17px 15px 13px;
+    border-radius: 13px;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        .container{
+            background: black;
+            border : 2px solid black;
+            padding: 34px;
+            margin: 34px;
+        }
+        .firstchild{
+            background: rgb(168, 105, 105);
+            border : 2px solid black;
+            padding: 34px;
+            margin: 34px;
+        }
+        .lastchild{
+            background: rgb(71, 160, 51);
+            border : 2px solid black;
+            padding: 34px;
+            margin: 34px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="firstchild">
+            <div class="lastchild"></div>
+        </div>
+    </div>
+    <script>
+        document.querySelector(".lastchild").addEventListener("click" , (e)=>{
+            e.stopPropagation()
+            alert("innermost box")
+        })
+        document.querySelector(".firstchild").addEventListener("click" , (e)=>{
+            e.stopPropagation()
+            alert("second box")
+        })
+        document.querySelector(".container").addEventListener("click" , (e)=>{
+            alert("outer box")
+        })
+    </script>
+</body>
+</html>
