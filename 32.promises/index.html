@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+
+<body>
+    <script>
+
+        // function findeven(a) {
+        //     if (a % 2 == 0) {
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        // }
+        // let p1 = new Promise((resolve, reject) => {
+        //     let a = Math.random() + 1;
+        //     if (findeven(a)) {
+        //         resolve("Even Found");
+        //     } else {
+        //         reject("Even Not Found")
+        //     }
+        // });
+
+        // console.log(p1);
+
+        async function funcq() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("done")
+                }, 2000);
+
+            })
+        }
+
+
+        async function main() {
+            console.log("before");
+            
+            let data = await funcq();
+
+            console.log("after");
+            
+        }
+
+        main();
+
+    </script>
+
+</body>
+
+</html>
