@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- reate a ec ng s mu
+these messages with random
+Initializing Hacking.
+Reading your Files.
+Password files Detected.
+atoru c
+as green ac groun
+delay of 1 to 7 seconds
+an
+t s ows
+Sending all passwords and personal files to server...
+Cleaning up... -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackers terminal</title>
+    <style>
+        .hacker {
+            background-color: green;
+            height: 94vh;
+            width: 97vw;
+            border: 10px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .text {
+            border: 2px solid black;
+            padding: 71px 175px 71px 175px;
+            margin: 23px;
+            color: rgb(19, 17, 17);
+            font-weight: bolder;
+            font-size: 23px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hacker">
+        <span class="text">I am a Hacker</span>
+    </div>
+    <script>
+
+        async function textadder(text, a) {
+            setTimeout((e) => {
+                document.querySelector(".text").textContent = text
+                
+            }, a)
+
+            return new Promise((resolve, reject) => {
+                resolve("done")
+            })
+            
+        }
+
+        textadder("Initializing Hacking", 1000);
+
+        textadder("Reading your Files" , 3000);
+        
+        textadder("Password files Detected" , 5000);
+        
+        textadder("Congradulations you are hacked" , 7000);
+    </script>
+</body>
+
+</html>
