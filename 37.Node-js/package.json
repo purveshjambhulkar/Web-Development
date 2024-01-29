@@ -1,0 +1,19 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "it is what it is ",
+  "main": "enter",
+  "scripts": {
+    "test": "tested"
+  },
+  "repository": {
+    "type": "git",
+    "url": "not applicable"
+  },
+  "keywords": [
+    "words",
+    "key"
+  ],
+  "author": "Me Myself Purvesh",
+  "license": "ISC"
+}
