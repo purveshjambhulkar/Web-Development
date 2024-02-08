@@ -1,0 +1,16 @@
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.btn{
+    height: fit-content;
+    width: fit-content;
+    margin: 50px;
+    color: white;
+    font-weight: bold;
+    background:gray;
+}
