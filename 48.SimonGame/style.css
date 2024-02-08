@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.boxes {
+    margin: 20px;
+    height: 200px;
+    width: 200px;
+    border-radius: 20%;
+    border:10px solid black;
+}
+
+.container{
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.blue{
+    background-color: blue;
+}
+.purple{
+    background-color: purple;
+}
+
