@@ -20,8 +20,7 @@ app.get("/:username/:rollno", (req, res) => {
 })
 
 app.get("/search" , (req , res)=>{
-    let abc = res.query;
-    console.log(abc);
+    console.log(req.query);
     res.send(`send successful`)
 })
 // app.get("/apple" , (req , res)=>{
