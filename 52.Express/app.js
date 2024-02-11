@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 
 app.get("/:username/:rollno", (req, res) => {
     let { username, id } = req.params;
-    let htmlcode = "<h1>This anohter exple </h1><ul><li>$(username)</li><li>$(id)</li></ul>";
+    let htmlcode = "<h1>This is another example </h1><ul><li>$(username)</li><li>$(id)</li></ul>";
     res.send(htmlcode);
 })
 
