@@ -8,10 +8,14 @@ app.listen(port, () => {
 })
 
 app.get("/register" , (req , res)=>{
+    let {user , email} = req.query;
+    // res.send("THIS IS GET RESPONSE")
+    res.send(`Welcome ${user} !`)
     console.log(`this is get request`);
     
 })
 app.post("/register" , (req , res)=>{
     console.log(`this is post request`);
+    res.send("THIS IS POST RESPONSE")
     
 })
