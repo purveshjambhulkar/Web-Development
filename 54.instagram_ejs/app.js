@@ -15,7 +15,8 @@ app.get("/" , (req ,res)=>{
 })
 
 app.get("/insta/:username" , (req ,res)=>{
+    const following = ["purvesh", "viraj" , "om" , "sahil"];
     let follow = Math.floor(Math.random() * 1000000) + 1;
     let {username} = req.params;
-    res.render("instagram.ejs" , {name : username , Followers : follow });
+    res.render("instagram.ejs" , {name : username , Followers : follow  , following });
 })
