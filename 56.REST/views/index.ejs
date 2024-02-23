@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL POSTS</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>SASTA QUORA</h1>
+
+    <h3>ALL POSTS</h3>
+    <%for(content of posts){%>
+        <div class="postx">
+            <h3 class="user">
+                @<%=content.username%>
+            </h3>
+            <p class="content">
+                ....<%=content.content%>
+            </p>
+            <br>
+            <a href="http://localhost:8080/posts/<%= content.id %>">Explore</a>
+        </div>
+
+        <%}%>
+
+        <a href="http://localhost:8080/posts/new">NEW POST</a>
+
+</body>
+
+</html>
