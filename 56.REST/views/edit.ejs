@@ -9,11 +9,10 @@
 
 <body>
     <h1>Edit your post</h1>
-    <form>
-        <input type="text" placeholder="<%= post.username  %>" name="username">
-        <br>
-        <br>
-        <textarea name="content" placeholder="<%= post.content  %>" cols="30" rows="10"></textarea>
+    <h3>Username - <%= post.username %>
+    </h3>
+    <form method="post" action="/posts/<%=post.id%>?_method=PATCH">
+        <textarea name="content" cols="30" rows="10"><%= post.content  %></textarea>
         <br>
         <br>
         <button>submit post</button>

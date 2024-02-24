@@ -22,11 +22,15 @@
             </p>
             <br>
             <a href="http://localhost:8080/posts/<%= content.id %>">Explore</a>
+            <a href="http://localhost:8080/posts/<%= content.id %>/edit">Edit</a>
+            <form action="/posts/<%= content.id  %>?_method=DELETE" method="post">
+                <button>DELETE</button>
+            </form>
         </div>
 
         <%}%>
 
-        <a href="http://localhost:8080/posts/new">NEW POST</a>
+            <a href="http://localhost:8080/posts/new">NEW POST</a>
 
 </body>
 
