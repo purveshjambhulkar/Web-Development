@@ -1,0 +1,56 @@
+//INSERTING INTO THE TABLE USING SINGLE ARRAY 
+// let q = "INSERT INTO USER (id , username , email , password) VALUES (? , ? , ? , ? );"
+
+// let val = ["123" , "purvesh" , "purve@gmail.com" , "qwerty133@sql"];
+
+
+// connection.query(q , val, function (err, result, fields) {
+//   if (err) {
+//     return console.log(err);
+//   }
+//   return console.log(result);
+// })
+
+
+
+// INSERTING INTO THE TABLE USING MULTIPLE ARRAY 
+// let q = "INSERT INTO USER (id , username , email , password) VALUES ?;"
+
+// let val = [["2334", "qwert", "puwdfrve@wdg.com", "asdfg@sql"],
+// ["54", "vvdnfhn", "dsagdh@gmail.com", "uytfc@sql"],
+// ["3467", "fnmnbcvx", "dsfhgfhnxbv@gmail.com", "ghgd@sql"]];
+
+
+// connection.query(q, [val], function (err, result, fields) {
+//   if (err) {
+//     return console.log(err);
+//   }
+//   return console.log(result);
+// })
+
+
+
+// INSERTING INTO THE TABLE USING LOOPS
+// let q = "INSERT INTO USER (id , username , email , password) VALUES ?;"
+
+// let data = [];
+// for (let i = 0; i <= 100; i++) {
+//   let user = createRandomUser(); // Assuming createRandomUser() generates an object with properties id, username, email, and password
+//   data.push([user.userId, user.username, user.email, user.password]);
+// }
+
+// connection.query(q, [data], function (err, result, fields) {
+//   if (err) {
+//     return console.log(err);
+//   }
+//   return console.log(result);
+// })
+
+
+
+// connection.query(`select *  from user;`unction (err, result, fields) {
+//   if (err) {
+//     return console.log(err);
+//   }
+//   return console.log(result);
+// })

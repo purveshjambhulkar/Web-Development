@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USERS</title>
+    <style>
+        table,
+        tr,
+        td {
+            border: 2px, solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>this is users route</h1>
+    <!-- <form action="/user/add" method="get">
+        <button>Add new users</button>
+    </form> -->
+    
+    <a href="http://localhost:8080/user/add">ADD USER</a>
+
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+        </tr>
+
+        <tr>
+            <% for (d of data){ %>
+        <tr>
+            <td>
+                <%= d.id %>
+            </td>
+            <td>
+                <%= d.username %>
+            </td>
+            <td>
+                <%= d.email %>
+            </td>
+            <td>
+                <form action="user/<%= d.id %>/edit" method="get">
+                    <button>Edit username</button>
+                </form>
+            </td>
+            <td>
+                <form action="user/<%= d.id %>/delete" method="get">
+                    <button>Delete record</button>
+                </form>
+            </td>
+        </tr>
+        <% } %>
+            </tr>
+    </table>
+</body>
+
+</html>
