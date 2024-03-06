@@ -1,0 +1,132 @@
+
+form{
+    display: inline-block;
+}
+
+.edit-button {
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.edit-button:hover {
+    background-color: #45a049;
+}
+
+.edit-button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.edit-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.5);
+}
+
+.delete-button {
+    display: block;
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}
+
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #ccc;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+    background-image: linear-gradient(to bottom, #ddd, #bbb);
+    background-size: 100% 200%;
+}
+
+.button:hover {
+    background-position: 100% 80%;
+}
+
+.button:active {
+    background-position: 100% 100%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(119, 119, 119, 0.5);
+}
+
+.message-card {
+    /* display: inline-block; */
+    background-color: floralwhite;
+    border: 3px solid black;
+    border-radius: 7px;
+}
+
+
+.message-card h2 {
+    margin: 0 0 5px;
+}
+
+.sender-name {
+    display: inline-block;
+    color: #007BFF;
+    background-color: #e9e9f5;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.receiver-name {
+    display: inline-block;
+    color: #DC3545;
+    background-color: #fdebeb;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.message {
+    display: inline-block;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.message-card .message {
+    padding: 0 10px;
+}
+
+.date {
+    color: #999;
+    font-size: 12px;
+    margin: 10px 0 0;
+}
