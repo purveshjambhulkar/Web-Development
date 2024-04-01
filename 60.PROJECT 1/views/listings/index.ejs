@@ -1,34 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
+<% layout("/layouts/boilerplate") %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WANDERLUST</title>
-</head>
 
-<body>
-    <h1>CRUD OPERATIONS</h1>
-    <form action="/listings/new" method="GET">
-        <button>ADD NEW</button>
-    </form>
-    <div class="main">
-        <% for (let list of alllistings){ %>
-            <div>
 
-                <a href="listings/<%= list._id %>">
-                    <%= list.title %>
-                </a>
+
+    <div class="row row-col-lg-3 row-col-mg-2 row-col-sm-1">
+
+        <% for(let listing of alllistings) { %>
+
+            <div class="card" style="width: 18rem;">
+                <img src=<%=listing.image %> class="card-img-top" alt="image" style = "height : 20rem">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= listing.title %>
+                    </h5>
+                    <p class="card-text">
+                        <%= listing.description%>.
+                    </p>
+                    <a href="/listings/<%= listing._id %>" class="btn btn-primary">VISIT</a>
+                </div>
             </div>
-            <a href="/listings/<%= list._id %>/edit">Edit</a>
-            <form action="/listings/<%= list._id %>?_method=DELETE" method="POST">
-                <button>Delete</button>
-            </form>
-            <br><br>
-            <hr>
 
             <% } %>
-    </div>
-</body>
 
-</html>
+    </div>
+
+    <!-- <ul>
+        <% for(let listing of alllistings) { %>
+            <li><a href="/listings/<%= listing._id %>">
+                    <%= listing.title %>
+                </a></li>
+            <% } %>
+    </ul> -->

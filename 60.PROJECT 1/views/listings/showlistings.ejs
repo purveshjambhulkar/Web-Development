@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Listing</title>
     <style>
-        .listing {
+       .listing {
             border: 1px solid #ccc;
             padding: 20px;
             margin-bottom: 20px;
         }
 
-        .listing img {
+       .listing img {
             width: 100%;
             height: 150px;
             max-width: 300px;
@@ -21,22 +20,22 @@
             object-fit: cover;
         }
 
-        .listing h2 {
+       .listing h2 {
             margin-top: 0;
         }
 
-        .listing .price {
+       .listing.price {
             background-color: #eee;
             padding: 5px 10px;
             border-radius: 10px;
             margin-bottom: 10px;
         }
 
-        .listing .location {
+       .listing.location {
             margin-bottom: 10px;
         }
 
-        .listing .country {
+       .listing.country {
             background-color: #ddd;
             padding: 5px 10px;
             border-radius: 10px;
@@ -44,9 +43,23 @@
             margin-left: 10px;
             font-size: 14px;
         }
+
+       .edit-button {
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            background-color: #ff6a00;
+            color: white;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+       .edit-button:hover {
+            background-color: #e55a00;
+        }
     </style>
 </head>
-
 <body>
     <div class="listing">
         <img src=<%=list.image %> alt="listinh">
@@ -54,10 +67,9 @@
             <%= list.title %>
         </h2>
         <p class="description">
-            <%= list.description %>
-        </p>
-        <div class="price">
-            <%= list.price %>$
+            <%= list.description %> </p>
+        <div class="price"> 
+            <%= list.price %>
         </div>
         <div class="location">
             <span>
@@ -67,6 +79,7 @@
                 <%= list.country %>
             </span>
         </div>
+        <a class="edit-button" href="/listings/<%= list._id %>/edit">Edit</a>
     </div>
 </body>
 

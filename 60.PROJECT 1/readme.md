@@ -28,6 +28,7 @@ const Listing = require("./models/listing.js");
 app.set("view engine" , "ejs");
 app.set("views" , path.join(__dirname , "views"));
 app.use(express.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname , "/public")));
 
 
 app.listen(8080, () => {
@@ -199,4 +200,18 @@ app.delete("/listings/:id", async (req, res) => {
 ## **Phase 1 - Completed**
 
 ## **Phase 2**
+
+## Installation and Setup of Ejs Mate
+
+```
+npm i ejs-mate
+```
+
+#### Basic Setup
+
+```
+const ejsMate = require("ejs-mate");
+
+app.engine("ejs" , ejsMate);
+```
 
