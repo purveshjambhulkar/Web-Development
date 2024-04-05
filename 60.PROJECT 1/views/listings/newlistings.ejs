@@ -55,24 +55,24 @@
 
 <body>
     <div class="form-container">
-        <form method="post" action="/listings/new" id="add-listing-form">
+        <form method="post" action="/listings/new">
             <label for="title-input" class="label-bold">Title:</label>
-            <input type="text" id="title-input" class="input-text" name="title">
+            <input type="text" id="title-input" class="input-text" name="title" required>
 
             <label for="description-input" class="label-bold">Description:</label>
-            <textarea id="description-input" class="input-text" name="description"></textarea>
+            <textarea id="description-input" class="input-text" name="description" required></textarea>
 
             <label for="image-input" class="label-bold">Image URL:</label>
-            <input type="url" id="image-input" class="input-text" name="image">
+            <input type="url" id="image-input" class="input-text" name="image" required>
 
             <label for="price-input" class="label-bold">Price:</label>
-            <input type="number" id="price-input" class="input-text" name="price">
+            <input type="number" id="price-input" class="input-text" name="price" required>
 
             <label for="location-input" class="label-bold label-bold">Location:</label>
-            <input type="text" id="location-input" class="input-text" name="location">
+            <input type="text" id="location-input" class="input-text" name="location" required>
 
             <label for="country-input" class="label-bold">Country:</label>
-            <input type="text" id="country-input" class="input-text" name="country">
+            <input type="text" id="country-input" class="input-text" name="country" required>
 
             <button type="submit" id="form-submit-button">Add Listing</button>
 
