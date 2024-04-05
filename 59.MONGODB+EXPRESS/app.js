@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const Chat = require("./models/chat.js");
 const methodOverride = require('method-override');
+const ExpressError = require("./ExpressError.js");
 
 
 app.use(methodOverride('_method'));
@@ -23,6 +24,17 @@ async function main() {
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
+
+
+/**88888888888888888888888888888888888888888888888888888888888888888888 */
+
+//error handling middle ware
+// app.use((err, req , res, next)=>{
+//     let {status = 444 , messege = "ASYNC ERROR"} = err;
+     
+// })
+
+/**88888888888888888888888888888888888888888888888888888888888888888888 */
 
 
 // let chat1 = new Chat({ from: "purvesh", to: "elon musk", message: "hi bro", created_at: new Date(), })
@@ -67,6 +79,11 @@ app.get("/chats/:id/edit", async (req, res) => {
     let { id } = req.params;
     // console.log(`the id is ${id}`);
     let chat = await Chat.findById(id);
+    
+    if(!chat){
+        next(new ExpressError(444 , "chat nahi hai re baba"));
+    }
+
 
     res.render("edit.ejs", { chat });
 
