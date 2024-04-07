@@ -26,6 +26,14 @@ const ListingSchema = new Schema({
         type: String,
     },
 
+    //review
+
+    reviews: [
+        {
+            type : Schema.Types.ObjectId,
+            ref : "Review",
+        },
+    ],
 })
 
 

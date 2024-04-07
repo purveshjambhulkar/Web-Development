@@ -3,11 +3,13 @@ const app = express();
 const path = require('path');
 const mongoose = require("mongoose");
 const Listing = require("./models/listing.js");
+const Review = require("./models/review.js");
 const methodOverride = require('method-override');
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
-const {listingSchema} = require("./schema.js");
+const { listingSchema } = require("./schema.js");
+const { reviewSchema } = require("./schema.js");
 
 
 app.set("view engine", "ejs");
@@ -58,15 +60,30 @@ app.get("/listings", async (req, res) => {
     res.render("./listings/index.ejs", { alllistings });
 })
 
+//8888888888888888888888888888888888888888888888888888888888888
 
-const validateListing= (req , res , next)=>{
-    let {error} = listingSchema.validate(req.body); 
-    if(error){
-        throw new ExpressError(400 , result.error);
-    }else {
-        next(); 
+const validateListing = (req, res, next) => {
+    let { error } = listingSchema.validate(req.body);
+    if (error) {
+        throw new ExpressError(400, result.error);
+    } else {
+        next();
     }
 }
+
+
+const validateReview = (req, res, next) => {
+    let { error } = reviewSchema.validate(req.body);
+    if (error) {
+        throw new ExpressError(400, result.error);
+    } else {
+        next();
+    }
+}
+
+
+
+//88888888888888888888888888888888888888888888888888888888888888888
 
 
 
@@ -75,8 +92,8 @@ app.get("/listings/new", (req, res) => {
     res.render("./listings/newlistings.ejs");
 });
 
-//NEW ROUTE - To the form data to DB
-app.post("/listings/new", validateListing ,wrapAsync(async (req, res , next) => {
+//NEW ROUTE - To the form data to DB  //USAGE OF VALIDATE
+app.post("/listings/new", validateListing, wrapAsync(async (req, res, next) => {
     const newListing = new Listing(req.body.listing);
     await newListing.save();
     res.redirect("/listings");
@@ -90,7 +107,7 @@ app.post("/listings/new", validateListing ,wrapAsync(async (req, res , next) => 
 
 //SHOW ROUTE - TO THE DATA OF ANY ONE LISTING
 app.get("/listings/:id", async (req, res) => {
-    let list = await Listing.findById(req.params.id);
+    let list = await Listing.findById(req.params.id).populate("reviews"); //populatiing the reviews to display them is show route
     res.render("./listings/showlistings.ejs", { list })
 
 })
@@ -118,19 +135,40 @@ app.delete("/listings/:id", async (req, res) => {
 });
 
 
-app.all("*" , (req , res , next)=>{
-    next(new ExpressError(404 , "Page Not Found!!!"));  
+
+//Route for Review //VALIDATE FOR REVIEW
+app.post("/listings/:id/reviews", validateReview, wrapAsync(async (req, res, next) => {
+    let id = req.params.id;
+    let list = await Listing.findById(id);
+    let review = new Review(req.body.review);
+    await review.save();
+    list.reviews.push(review);
+    await list.save();
+    console.log(`New Review Added`);
+    res.redirect("./listings/showlistings.ejs");
+}))
+
+//Delete route for review
+app.delete("./listings/:id/reviews/:reviewId", wrapAsync(async (req, res) => {
+    let { id, reviewId } = req.params;
+
+    await Review.deleteOne(reviewId);
+    res.redirect("./listings/showlistings.ejs");
+
+}))
+
+
+app.all("*", (req, res, next) => {
+    next(new ExpressError(404, "Page Not Found!!!"));
 })
 
 app.use((err, req, res, next) => {
-    let {statusCode  , message} = err; 
-    res.render("./listings/error.ejs") ;
+    let { statusCode, message } = err;
+    res.render("./listings/error.ejs");
     // res.status(statusCode).send(message);   
-
 })
 
 
 app.listen(8080, () => {
     console.log("THE PORT IS 8080");
-
 })
