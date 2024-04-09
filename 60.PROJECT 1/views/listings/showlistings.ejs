@@ -83,6 +83,7 @@
             </span>
         </div>
         <a class="edit-button" href="/listings/<%= list._id %>/edit">Edit</a>
+        <a class="edit-button" href="/listings/<%= list._id %>?_method=DELETE">Delete</a>
 
         <hr>
         <div class="col-8 offset-3">
@@ -116,7 +117,7 @@
                         <p class="card-text">
                             <%= review.rating %>
                         </p>
-                        <form action="/listings/<%= list._id %>/reviews/<%= review._id %>" method="post">
+                        <form method="post" action="/listings/<%= list._id %>/reviews/<%= review._id %>?_method=DELETE">
                             <button class="edit-button">Delete</button>
                         </form>
                     </div>
