@@ -2,11 +2,19 @@ const express = require("express");
 const app = express();
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+const path = require('path');
+const flash = require("connect-flash");
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
+
 
 
 
 
 app.use(cookieParser("secret code"));
+app.use(flash());
 
 
 //ROUTE TO SET COOKIES
@@ -42,14 +50,49 @@ app.get("/getsignedcookies", (req, res) => {
     res.send("signed cookies printed");
 })
 
-//=========================================
+//=================================================================== 
 
 //dealing with express session
-app.use(session({
+
+// app.use(session({
+//     secret: "this is a secret",
+//     resave: false,
+//     saveUninitialized: true,
+// }))
+//another way to do this
+
+const sessionOptions = {
     secret: "this is a secret",
     resave: false,
     saveUninitialized: true,
-}))
+}
+
+app.use(session(sessionOptions));
+
+//defining a middleware for res.locals.
+app.use((req , res, next)=>{
+    res.locals.errMsg = req.flash("error");
+    res.locals.successMsg = req.flash("success");
+    next();
+})
+
+app.get("/register", (req, res) => {
+    let { name = "unknown" } = req.query;
+    req.session.name = name;
+    if (name == "unknown") {
+        req.flash("error" , "name not registered");
+    }else{
+        req.flash("success", "registeration completed successfully");
+    }
+    res.redirect("/hello");
+})
+
+app.get("/hello", (req, res) => {
+    let { name } = req.session;
+ 
+    res.render("hello.ejs", { name: name, });
+})
+
 
 //route to count the number of sessions
 app.get("/count", (req, res) => {

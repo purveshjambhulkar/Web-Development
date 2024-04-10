@@ -10,6 +10,7 @@ const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
 const { listingSchema } = require("./schema.js");
 const { reviewSchema } = require("./schema.js");
+const session = require("express-session");
 
 const listings = require("./routes/listings.js");
 const review = require("./routes/review.js");
@@ -35,7 +36,6 @@ async function main() {
     await mongoose.connect(MONGO_URL);
 }
 
-
 //using router for routes of listings and reviews
 
 app.use("/listings", listings);
@@ -43,24 +43,21 @@ app.use("/listings/:id/reviews", review);
 
 
 
-
-// app.get("/listadd", async (req, res) => {
-//     let newListing = new    Listing({
-//         title : "dy patil",
-//         description : "engineering collefe",
-//         price : 880,
-//         location : "akurdi",
-//         country : "India", 
-//     });
-
-//     await newListing.save();
-//     console.log(`listADDED`);
-//     res.send(`listADDED`);
-
-// })
-
-
 //8888888888888888888888888888888888888888888888888888888888888
+//dealing with sessions
+const sessionOptions = {
+    secret: "mysupersecret",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        expires: Date.now() + 60 * 1000, //cookie will expire within one minute
+        // expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+        maxAge: 7 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+    }
+}
+
+app.use(session(sessionOptions));
 
 
 
@@ -68,27 +65,6 @@ app.use("/listings/:id/reviews", review);
 
 
 //88888888888888888888888888888888888888888888888888888888888888888
-
-
-
-
-
-//ROUTES FOR REVIEWS 
-
-
-
-//Route for Review //VALIDATE FOR REVIEW
-// app.post("/listings/:id/reviews", validateReview, wrapAsync(async (req, res, next) => {
-//     let id = req.params.id;
-//     let list = await Listing.findById(id);
-//     let review = new Review(req.body.review);
-//     list.reviews.push(review);
-//     await review.save();
-//     await list.save();
-//     console.log(`New Review Added`);
-//     res.render("/listings");
-// }))
-
 
 
 app.all("*", (req, res, next) => {
