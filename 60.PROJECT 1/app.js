@@ -11,6 +11,7 @@ const ExpressError = require("./utils/ExpressError.js");
 const { listingSchema } = require("./schema.js");
 const { reviewSchema } = require("./schema.js");
 const session = require("express-session");
+const flash = require("connect-flash");
 
 const listings = require("./routes/listings.js");
 const review = require("./routes/review.js");
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, "/public")));
 app.engine("ejs", ejsMate);
+
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
@@ -36,6 +38,31 @@ async function main() {
     await mongoose.connect(MONGO_URL);
 }
 
+//8888888888888888888888888888888888888888888888888888888888888
+//dealing with sessions and flash and cookies
+const sessionOptions = {
+    secret: "mysupersecret",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        // expires: Date.now() + 60 * 1000, //cookie will expire within one minute
+        expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+        maxAge: 7 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+    }
+}
+
+app.use(session(sessionOptions));
+app.use(flash());
+
+
+//making middleware for implementing flash
+app.use((req, res, next)=>{
+    req.flash("success" , "new lisiting created successfully");
+    next();
+})
+//88888888888888888888888888888888888888888888888888888888888888888
+
 //using router for routes of listings and reviews
 
 app.use("/listings", listings);
@@ -43,28 +70,8 @@ app.use("/listings/:id/reviews", review);
 
 
 
-//8888888888888888888888888888888888888888888888888888888888888
-//dealing with sessions
-const sessionOptions = {
-    secret: "mysupersecret",
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-        expires: Date.now() + 60 * 1000, //cookie will expire within one minute
-        // expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
-        maxAge: 7 * 24 * 60 * 60 * 1000,
-        httpOnly: true,
-    }
-}
-
-app.use(session(sessionOptions));
 
 
-
-
-
-
-//88888888888888888888888888888888888888888888888888888888888888888
 
 
 app.all("*", (req, res, next) => {

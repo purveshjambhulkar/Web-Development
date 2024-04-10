@@ -39,8 +39,8 @@ router.get("/new", (req, res) => {
 router.post("/new", validateListing, wrapAsync(async (req, res, next) => {
     const newListing = new Listing(req.body.listing);
     await newListing.save();
+    res.locals.success = req.flash("success");
     res.redirect("/listings");
-
 }));
 
 //NOTE : here the new route is kept before the show route bcoz the compiler
