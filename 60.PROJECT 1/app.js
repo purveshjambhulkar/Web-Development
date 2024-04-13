@@ -12,9 +12,14 @@ const { listingSchema } = require("./schema.js");
 const { reviewSchema } = require("./schema.js");
 const session = require("express-session");
 const flash = require("connect-flash");
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
+const User = require("./models/user.js");
 
-const listings = require("./routes/listings.js");
-const review = require("./routes/review.js");
+
+const listingsRouter = require("./routes/listings.js");
+const reviewRouter = require("./routes/review.js");
+const userRouter = require("./routes/user.js");
 
 
 app.set("view engine", "ejs");
@@ -55,18 +60,28 @@ const sessionOptions = {
 app.use(session(sessionOptions));
 app.use(flash());
 
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+
+// use static serialize and deserialize of model for passport session support
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 //making middleware for implementing flash
-app.use((req, res, next)=>{
-    req.flash("success" , "new lisiting created successfully");
+app.use((req, res, next) => {
+    res.locals.currUser = req.user ;
+    req.flash("success", "new lisiting created successfully");
     next();
 })
-//88888888888888888888888888888888888888888888888888888888888888888
+// 
+// 8888888888888888888888888888888888888888888888888888888888888888
 
 //using router for routes of listings and reviews
 
-app.use("/listings", listings);
-app.use("/listings/:id/reviews", review);
+app.use("/listings", listingsRouter);
+app.use("/listings/:id/reviews", reviewRouter); 
+app.use("/", userRouter); 
 
 
 

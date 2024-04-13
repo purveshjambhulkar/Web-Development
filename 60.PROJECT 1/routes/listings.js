@@ -4,6 +4,8 @@ const Listing = require("../models/listing.js");
 const wrapAsync = require("../utils/wrapAsync.js");
 const ExpressError = require("../utils/ExpressError.js");
 const { listingSchema } = require("../schema.js");
+const passport = require("passport"); 
+const { isLoggedIn} = require("../middlewares.js");
 
 
 
@@ -31,7 +33,7 @@ router.get("/", async (req, res) => {
 
 
 //NEW ROUTE - To Add the data to the DB
-router.get("/new", (req, res) => {
+router.get("/new",isLoggedIn , (req, res) => {
     res.render("./listings/newlistings.ejs");
 });
 
@@ -49,7 +51,7 @@ router.post("/new", validateListing, wrapAsync(async (req, res, next) => {
 
 
 //SHOW ROUTE - TO THE DATA OF ANY ONE LISTING
-router.get("/:id", async (req, res) => {
+router.get("/:id",isLoggedIn  , async (req, res) => {
     let list = await Listing.findById(req.params.id).populate("reviews"); //populatiing the reviews to display them is show route
     res.render("./listings/showlistings.ejs", { list })
 
@@ -57,7 +59,7 @@ router.get("/:id", async (req, res) => {
 
 
 // EDIT/UPDATE ROUTE - to update the data in the DB
-router.get("/:id/edit", async (req, res) => {
+router.get("/:id/edit",isLoggedIn , async (req, res) => {
     let list = await Listing.findById(req.params.id);
     res.render("./listings/editlistings.ejs", { list });
 })
